@@ -10,6 +10,31 @@ This project performs hand segmentation on a video using the SAM2 model, MediaPi
 - **Video Processing**: Extracts frames, applies segmentation, and combines frames into a final video.
 
 ---
+## Demo
+
+### 1. Original Video (`test.mp4`)
+The input video file used for processing. Watch it below:
+
+
+
+https://github.com/user-attachments/assets/fb6cc044-e251-4cab-857d-4d30768987ce
+
+
+
+### 2. Segmented Video (`segmented_video.mp4`)
+The final output video showing the segmented hands. Watch it below:
+
+
+https://github.com/user-attachments/assets/a1f6e9b1-638c-4166-9598-161b26e5349a
+
+
+
+### 3. Wrist Detection Image (`output_image.jpg`)
+An image highlighting the detected wrist before segmentation:
+
+![output_image](https://github.com/user-attachments/assets/ee0c0398-2059-45fe-bfb5-e11810814857)
+
+---
 
 ## Requirements
 1. Python 3.8 or later
@@ -81,31 +106,6 @@ brew install ffmpeg
 ```bash
 python script.py "/path/to/test.mp4"
 ```
-
----
-
-## Resource Files
-
-### 1. Original Video (`test.mp4`)
-The input video file used for processing. Watch it below:
-
-<video width="640" height="360" controls>
-  <source src="path/to/test.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-### 2. Segmented Video (`segmented_video.mp4`)
-The final output video showing the segmented hands. Watch it below:
-
-<video width="640" height="360" controls>
-  <source src="path/to/segmented_video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-### 3. Wrist Detection Image (`output_image.jpg`)
-An image highlighting the detected wrist before segmentation:
-
-![Wrist Detection Image](path/to/output_image.jpg)
 ---
 
 ## Project Structure
