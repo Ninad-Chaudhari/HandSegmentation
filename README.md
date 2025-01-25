@@ -79,11 +79,15 @@ brew install ffmpeg
 ```
 
 #### On Windows:
-1. Download FFmpeg from [ffmpeg.org](https://ffmpeg.org/download.html).
+1. Download FFmpeg from [ffmpeg.org](https://drive.google.com/drive/folders/15fTVaGijOnzADNftl5Fo6G-n8P6ydUcs?usp=sharing).
 2. Add FFmpeg to your system PATH.
 
 ---
 
+### 4. Load Model weights :
+1. Since github wont let me upload files > 50 MB I have created a google drive for weights please download it and save it in the checkpoints folder :)
+2. Link : https://drive.google.com/drive/folders/15fTVaGijOnzADNftl5Fo6G-n8P6ydUcs?usp=sharing
+---
 ## Running the Script
 
 ### Input:
