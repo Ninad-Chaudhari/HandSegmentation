@@ -1,0 +1,158 @@
+# Hand Segmentation Pipeline
+
+This project performs hand segmentation on a video using the SAM2 model, MediaPipe, and OpenCV. It processes a video file to segment hands, saves the segmented frames, and generates a final segmented video.
+
+---
+
+## Features
+- **Hand Detection**: Uses MediaPipe to identify wrist coordinates.
+- **Segmentation**: Utilizes Facebook's SAM2 model for accurate hand segmentation.
+- **Video Processing**: Extracts frames, applies segmentation, and combines frames into a final video.
+
+---
+
+## Requirements
+1. Python 3.8 or later
+2. A compatible NVIDIA GPU (for CUDA) or CPU
+3. FFmpeg installed and available in your system PATH
+
+---
+
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-repo-url.git
+cd your-repo-folder
+```
+
+### 2. Install Dependencies
+Create and activate a virtual environment:
+```bash
+python -m venv env
+source env/bin/activate  # For Linux/macOS
+env\Scripts\activate     # For Windows
+```
+
+Install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Ensure FFmpeg is Installed
+FFmpeg is used for frame extraction and video creation. Install it as follows:
+
+#### On Linux:
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+#### On macOS (with Homebrew):
+```bash
+brew install ffmpeg
+```
+
+#### On Windows:
+1. Download FFmpeg from [ffmpeg.org](https://ffmpeg.org/download.html).
+2. Add FFmpeg to your system PATH.
+
+---
+
+## Running the Script
+
+### Input:
+- A video file (e.g., `test.mp4`) to process.
+
+### Output:
+- Processed frames in the `output/frames` folder.
+- Segmented frames in the `output/segmented_frames` folder.
+- A final segmented video in `output/segmented_video.mp4`.
+- An output image showing wrist detection: `output_image.jpg`.
+
+### Steps to Run:
+1. Place your video file in the project directory or note its path.
+2. Run the script with the video file path as an argument:
+   ```bash
+   python script.py "path/to/video.mp4"
+   ```
+
+### Example:
+```bash
+python script.py "/path/to/test.mp4"
+```
+
+---
+
+## Resource Files
+
+### 1. Original Video (`test.mp4`)
+The input video file used for processing. Watch it below:
+
+<video width="640" height="360" controls>
+  <source src="path/to/test.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+### 2. Segmented Video (`segmented_video.mp4`)
+The final output video showing the segmented hands. Watch it below:
+
+<video width="640" height="360" controls>
+  <source src="path/to/segmented_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+### 3. Wrist Detection Image (`output_image.jpg`)
+An image highlighting the detected wrist before segmentation:
+
+![Wrist Detection Image](path/to/output_image.jpg)
+---
+
+## Project Structure
+```plaintext
+├── checkpoints/
+│   ├── sam2.1_hiera_large.pt      # SAM2 model weights
+│   ├── sam2.1_hiera_l.yaml        # SAM2 model configuration
+├── output/
+│   ├── frames/                    # Extracted video frames
+│   ├── segmented_frames/          # Segmented frames
+│   ├── segmented_video.mp4        # Final segmented video
+│   ├── output_image.jpg           # Wrist detection image
+├── script.py                      # Main script for processing
+├── requirements.txt               # Required dependencies
+├── README.md                      # Project documentation
+```
+
+---
+
+## Notes
+- Ensure the `checkpoints` directory contains the SAM2 weights and configuration files:
+  - `sam2.1_hiera_large.pt`
+  - `sam2.1_hiera_l.yaml`
+- The final video is saved in the `output` directory as `segmented_video.mp4`.
+- The wrist detection image is saved as `output_image.jpg`.
+
+---
+
+## Troubleshooting
+1. **Hydra Config Not Found**:
+   Ensure the `checkpoints` folder is in the same directory as `script.py` and contains the correct model files.
+
+2. **FFmpeg Not Found**:
+   Verify FFmpeg is installed and available in your system PATH.
+
+3. **CUDA Errors**:
+   Ensure you have a compatible GPU with the correct version of CUDA installed.
+
+---
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
+- [Facebook SAM2](https://github.com/facebookresearch/sam2)
+- [MediaPipe](https://google.github.io/mediapipe/)
+- [OpenCV](https://opencv.org/)
+
